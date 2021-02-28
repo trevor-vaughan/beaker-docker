@@ -17,6 +17,9 @@ end
 # don't want to create a transitive dependency
 group :acceptance_testing do
   gem "beaker", *location_for(ENV['BEAKER_VERSION'] || '~> 4.0')
+  # Needed for podman testing
+  gem "docker-api", :git => 'https://github.com/trevor-vaughan/docker-api', :branch => 'podman-compat'
+  gem "beaker-rspec"
 end
 
 
